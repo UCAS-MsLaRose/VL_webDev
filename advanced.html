@@ -3,21 +3,62 @@
     <head>
         <title>Advanced HTML Notes</title>
         <meta charset="UTF-8">
+        <style>
+            /* Cascading Style Sheets
+            1. Selector
+            2. Declaration
+                a. Property 
+                b. Value
+             */
+             body{
+                color:#13d671;
+                background-color:rgba(14, 49, 57, 0.852)
+             }
+             h1{
+                color: azure;
+                text-decoration: underline;
+                text-align:center;
+             }
+             #even{
+                color:antiquewhite
+             }
+             .numbered{
+                font-size: 20px;
+             }
+             .important{
+                font-weight: bolder;
+             }
+             ul{
+                background-color: rgba(169, 169, 169, 0.468);
+                border-radius: 4px;
+                width: 25%;
+                height: 100px;
+                font-size: 1em;
+                border: dotted 10px orange;
+                /* vw vh adjust sized based on the size of the screen */
+             }
+             #winter{
+                width:50%;
+             }
+             #mountains{
+                width: 300px
+             }
+        </style>
     </head>
     <body>
         <h1>Advanced HTML Notes</h1>
         <h3>Lists:</h3>
         <div>
-        <ol type="i"> <!--This is a numbered list-->
+        <ol type="i" class="numbered"> <!--This is a numbered list-->
             <li>This is the first thing</li>
-            <li>This is the second</li>
+            <li id="even" class="important">This is the second</li>
             <li>This comes in third</li>
         </ol>
         <ul> <!--This is a bulletted list-->
             <li><a href="https://usapple.org/apple-varieties" target="_blank">Apple</a></li>
-            <li>Banana</li>
+            <li id ="even">Banana</li>
             <li>Orange</li>
-            <li>Kiwi</li>
+            <li id="even">Kiwi</li>
         </ul>
         <dl>
             <dt>Fall</dt>
@@ -30,9 +71,9 @@
         </dl>
 </div>
         <h3>Attributes:</h3>
-        <a href="https://www.alltrails.com/trail/us/utah/mt-timpanogos-timpooneke-trail" target="_blank"><img src="https://globalsummitguide.com/wp-content/uploads/2026/07/AdobeStock_1146206325-scaled.jpeg" alt="Mount Timp" width="200px"></a>
+        <a href="https://www.alltrails.com/trail/us/utah/mt-timpanogos-timpooneke-trail" target="_blank"><img src="https://globalsummitguide.com/wp-content/uploads/2026/07/AdobeStock_1146206325-scaled.jpeg" alt="Mount Timp" id="mountains"></a>
         <div>
-        <img src="mt_timp.jpg" alt="Sunset on Timp" width="200px">
+        <img src="mt_timp.jpg" alt="Sunset on Timp" id="winter">
         <p>Image from <a href="https://commons.wikimedia.org/wiki/File:Mount_Timpanogos_at_sunset.jpg" target="_blank"> Wikimedia Commons</a></p>
         </div>
     </body>
