@@ -9,7 +9,7 @@
                 margin: 8px;
                 margin-left: 50px;
             }
-            #box{
+            #box, #boxTwo{
                 width: 75px;
                 height: 75px;
                 background-color: blue;
@@ -22,7 +22,7 @@
                 gap: 5px;
             }
             #flex-wrapper{
-                display: flex;
+                display: none;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
@@ -33,10 +33,10 @@
     <body>
         <h1>Alignment Notes</h1>
         <div id="box-wrapper">
-            <div id="box">
+            <div id="box" onmouseover="dissapear()" onmouseout="appear()">
                 <p>Box 1</p>
             </div>
-            <div id="box">
+            <div id="boxTwo">
                 <p>Box 2</p>
             </div>
             <div id="box">
@@ -60,6 +60,32 @@
                 <p>Box 4</p>
             </div>
         </div>
-        <button>Click Me</button>
+        <input type="color" id="colorPicker">
+        <br>
+        <button onClick="color()">Click Me</button>
+        <button id="showMore" onclick="show()">Show More</button>
+        <script>
+            //makes the webpage interactive
+            function color(){
+                let newColor = document.getElementById("colorPicker").value
+                document.getElementById("box").style.backgroundColor = newColor
+            }
+            function dissapear(){
+                document.getElementById("boxTwo").style.display = 'none'
+            }
+            function appear(){
+                document.getElementById("boxTwo").style.display = "block"
+            }
+            function show(){
+                let element = document.getElementById("flex-wrapper")
+                if (element.style.display == "flex"){
+                    element.style.display = "none"
+                    document.getElementById("showMore").innerHTML = "Show More"
+                }else{
+                    element.style.display = "flex"
+                    document.getElementById("showMore").innerHTML = "Show Less"
+                }
+            }
+        </script>
     </body>
 </html>
