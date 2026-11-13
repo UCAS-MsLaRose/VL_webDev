@@ -28,10 +28,14 @@
                 align-items: center;
                 flex-wrap: wrap;
             }
+            #duck{
+                width: 150px;
+            }
         </style>
     </head>
     <body>
         <h1>Alignment Notes</h1>
+        <img src="https://hotpinkgifts.com/cdn/shop/files/image_6cd8cbfb-a57b-4c41-8284-21cc9ab8fcdc.jpg?v=1743364261" alt="duck" id="duck" onmouseout="changeImage()">
         <div id="box-wrapper">
             <div id="box" onmouseover="dissapear()" onmouseout="appear()">
                 <p>Box 1</p>
@@ -66,6 +70,15 @@
         <button id="showMore" onclick="show()">Show More</button>
         <script>
             //makes the webpage interactive
+            let images = ["https://cdn11.bigcommerce.com/s-t0urwum501/images/stencil/1000x1000/products/8255/12345/116365_sp25-01__81152.1743181430.jpg?c=2", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnRsX2FF-UxMQ5aGEy0ppQokPxFKVoTFRfiekW9Ttvf28ORybyOlc7cOk&s=10", "https://amsterdamduckstore.com/wp-content/uploads/2015/08/spidy-rubber-duck-front-e1569408181344.jpg", "https://hotpinkgifts.com/cdn/shop/files/image_6cd8cbfb-a57b-4c41-8284-21cc9ab8fcdc.jpg?v=1743364261"]
+            let current = 0
+            function changeImage(){
+                current += 1
+                if (current > 3){
+                    current = 0
+                }
+                document.getElementById("duck").src = images[current]
+            }
             function color(){
                 let newColor = document.getElementById("colorPicker").value
                 document.getElementById("box").style.backgroundColor = newColor
